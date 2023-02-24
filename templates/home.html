@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dbforums</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+		<!-- <link href="static/style.css" rel="stylesheet"> -->
+        <link rel="shortcut icon" type="image/png" href="static/favicon.ico"/>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="navbar-brand" href="#">Welcome to  <a href="{% url 'home' %}"><img src="static/favicon.ico" width="170px" alt="" /></a>
+                </div>
+                <div class="d-flex">
+                    Currently active forums: {{count}} &nbsp;  &nbsp;
+
+                    <form method="POST" action="{% url 'addInForum' %}">
+                        {% csrf_token %}
+                        <button class="nav-item btn btn-outline-success" >Create Post</button>
+                    </form>
+                    &nbsp; &nbsp;
+                    <form method="POST" action="{% url 'addInDiscussion' %}">
+                        {% csrf_token %}
+                        <button class="nav-item btn  btn-outline-success">Comment</button>
+
+                    </form>
+
+                    &nbsp; &nbsp;
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Code of Conduct
+                    </button>
+
+
+
+                </div>
+                <!--
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                     </button> -->
+            </div>
+            </div>
+
+
+        </nav>
+        <br />
+
+        {%for forum in forums %}
+
+            <div class="card container">
+                <br>
+                <div class="card-header  container" style="text-align: center">
+                    <h3>{{forum.topic}} </h3>
+
+                </div>
+
+
+                <h5 class="card-title container"> <br /> By: {{forum.name}}  </h3>
+                    <div class="card-body container">
+                        <p>{{forum.description}}</p>
+                        <div style="text-align: right">
+                            email- {{forum.email}}
+                        </div>
+
+                        <p> <b> Link(s):</b> <a href="{{forum.link}}">{{forum.link}} </a> </p>
+                        <hr>
+
+                        <h4 class="text-start">Comments</h4>
+
+
+                        {%for discuss in discussions%}
+                            {%for objs in discuss%}
+                                {% if objs.forum == forum %}
+                                    <div class="card">
+
+                                        <div class="card-header">
+                                            {{objs.name}}
+                                        </div>
+
+                                        <div class="card-body">
+                                            {{objs.discuss}}
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                {% endif %}
+                            {%endfor%}
+                        {%endfor%}
+
+                    </div>
+            </div>
+            </div>
+
+            </div>
+
+            <br>
+
+        {%endfor%}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Our Simple Code of Conduct</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Our <a href="https://odysee.com/@Lunduke:e/LundukeCodeofConduct:2" class="link-primary">Code of Conduct</a>, inspired from Brian Lunduke
+                        <br />
+                        <b>Be Excellent to Each other</b>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
