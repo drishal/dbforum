@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
-# Create your views here.
 
 def home(request):
     forums=forum.objects.all()
@@ -35,3 +34,4 @@ def addInDiscussion(request):
             return redirect('/')
     context ={'form':form}
     return render(request,'addInDiscussion.html',context)
+

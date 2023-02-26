@@ -1,6 +1,5 @@
 from django.db import models
 
-# model for forum
 class forum(models.Model):
     name=models.CharField(max_length=200,default="anonymous" )
     email=models.CharField(max_length=200,null=True)
@@ -12,7 +11,6 @@ class forum(models.Model):
     def __str__(self):
         return str(self.topic)
 
-#model for discussion
 class Discussion(models.Model):
     forum = models.ForeignKey(forum,blank=True,on_delete=models.CASCADE)
     name=models.CharField(max_length=200,default="anonymous")
@@ -20,3 +18,4 @@ class Discussion(models.Model):
 
     def __str__(self):
         return str(self.forum)
+

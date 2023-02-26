@@ -12,6 +12,7 @@
     devShell = pkgs.mkShell {
       buildInputs = with pkgs; [
         python3Packages.django
+        python3Packages.django-markdownx
       ];
     };
 
