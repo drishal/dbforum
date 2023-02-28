@@ -12,12 +12,23 @@
     devShell = pkgs.mkShell {
       buildInputs = with pkgs; [
         python3Packages.django
-        python3Packages.django-markdownx
       ];
+
+      shellHook = ''
+      source venv/bin/activate            
+      '';
     };
 
     defaultApp = utils.lib.mkApp {
       drv = self.defaultPackage."${system}";
+    };
+
+    run = {
+      script = ''
+        #!/usr/bin/env bash
+        source env/bin/activate
+        python3 manage.py runserver
+      '';
     };
 
   }; in with utils.lib; eachSystem defaultSystems out;
