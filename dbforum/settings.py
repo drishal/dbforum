@@ -226,3 +226,5 @@ ALLOWED_HTML_ATTRIBUTES = [
     "height", "href", "id", "name", "reversed", "rowspan",
     "scope", "src", "style", "title", "type", "width"
 ]
+
+# LOGIN_REDIRECT_URL = "/"

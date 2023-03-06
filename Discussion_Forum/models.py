@@ -14,7 +14,7 @@ class forum(models.Model):
 class Discussion(models.Model):
     forum = models.ForeignKey(forum,blank=True,on_delete=models.CASCADE)
     name=models.CharField (max_length=200,default="anonymous")
-    discuss = models.TextField(max_length=1000)
+    comment = models.TextField(max_length=1000)
 
     def __str__(self):
         return str(self.forum)

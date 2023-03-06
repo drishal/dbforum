@@ -67,8 +67,8 @@
                         </h4>
 
 
-                        {%for discuss in discussions%}
-                            {%for objs in discuss%}
+                        {%for comment in discussions%}
+                            {%for objs in comment %}
                                 {% if objs.forum == forum %}
                                     <div class="card">
 
@@ -77,7 +77,7 @@
                                         </div>
 
                                         <div class="card-body">
-                                            {{objs.discuss}}
+                                            {{objs.comment}}
                                         </div>
 
                                     </div>
