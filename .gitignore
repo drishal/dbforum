@@ -1,0 +1,35 @@
+# Virtual environment
+venv/
+
+# Database
+db.sqlite3
+
+# Media
+media/
+
+# Static files
+staticfiles/
+
+# Secret files
+*.env
+*.key
+*.pem
+
+# Log files
+logs/
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Ignore Django generated files
+__pycache__/
+*.pyc
+*.pyo
+*.orig
+
+# Ignore macOS-specific files
+.DS_Store
+
+# add the direnv directory as well 
+.direnv/
