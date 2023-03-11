@@ -17,3 +17,4 @@ __pycache__/
 *.orig
 .DS_Store
 .direnv/*
+flake.lock
