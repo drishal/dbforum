@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+
+# Database
+db.sqlite3
+media/
+staticfiles/
+*.env
+*.key
+*.pem
+logs/
+*.pyc
+*.pyo
+__pycache__/
+*.pyc
+*.pyo
+*.orig
+.DS_Store
+.direnv/*
+flake.lock

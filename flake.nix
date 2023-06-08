@@ -19,18 +19,6 @@
       '';
     };
 
-    defaultApp = utils.lib.mkApp {
-      drv = self.defaultPackage."${system}";
-    };
-
-    run = {
-      script = ''
-        #!/usr/bin/env bash
-        source env/bin/activate
-        python3 manage.py runserver
-      '';
-    };
-
   }; in with utils.lib; eachSystem defaultSystems out;
 
 

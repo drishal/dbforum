@@ -1,20 +1,20 @@
-asgiref @ file:///build/source/dist/asgiref-3.5.2-py3-none-any.whl
-async-timeout @ file:///build/async-timeout-4.0.2/dist/async_timeout-4.0.2-py3-none-any.whl
-bleach==6.0.0
-certifi==2022.12.7
-charset-normalizer==3.0.1
-crispy-bootstrap5==0.7
-Django @ file:///build/Django-3.2.18/dist/Django-3.2.18-py3-none-any.whl
-django-ckeditor==6.5.1
-django-crispy-forms==2.0
-django-js-asset==2.0.0
-idna==3.4
-Markdown==3.3.4
-martor==1.6.18
-pytz @ file:///build/pytz-2022.7.1/dist/pytz-2022.7.1-py3-none-any.whl
-requests==2.28.2
-six==1.16.0
-sqlparse @ file:///build/sqlparse-0.4.3/dist/sqlparse-0.4.3-py3-none-any.whl
-typing_extensions @ file:///build/typing_extensions-4.4.0/dist/typing_extensions-4.4.0-py3-none-any.whl
-urllib3==1.26.14
-webencodings==0.5.1
+asgiref 
+async-timeout 
+bleach
+certifi
+charset-normalizer
+crispy-bootstrap5
+Django 
+django-ckeditor
+django-crispy-forms
+django-js-asset
+idna
+Markdown
+martor
+pytz 
+requests
+six
+sqlparse 
+typing_extensions 
+urllib3
+webencodings

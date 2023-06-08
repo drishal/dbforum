@@ -13,12 +13,11 @@ class forum(models.Model):
         return str(self.topic)
 
 class Discussion(models.Model):
-    forum = models.ForeignKey(forum,on_delete=models.CASCADE)
+    forum = models.ForeignKey(forum,on_delete=models.CASCADE, default=forum.topic)
     # forum_id = models.IntegerField()
-    name=models.CharField (max_length=200,default="anonymous")
+    name=models.CharField (max_length=200,default=forum.name)
     # comment = models.TextField(max_length=1000)
     comment = RichTextField(blank=True, null=True)
-
+    
     def __str__(self):
         return str(self.forum)
-

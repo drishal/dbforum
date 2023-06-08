@@ -58,7 +58,7 @@
                         <h4 class="text-start d-flex justify-content-between align-items-center">
                             Comments
                             <!-- <button type="button" class="btn btn-primary float-end">Add Comment</button> -->
-                            <form method="POST" action="{% url 'addInDiscussion' forum.id %}">
+                            <form method="POST" action="{% url 'addInDiscussion' forum.id %}?default_name={{ default_name }}">
                                 {% csrf_token %}
                                 <input type="hidden" name="forum_id" value="{{ forum.id }}">
                                 <button class="nav-item btn  btn-outline-success float-end">Comment</button>
