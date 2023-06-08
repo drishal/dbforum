@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure--k5er9$+um9$rjm53q&d_i^wh4u30zo5w47s3=npe4=$vr6jc)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["django-drishal.cloud.okteto.net", "0.0.0.0"]
 
 
 # Application definition
